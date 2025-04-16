@@ -208,6 +208,22 @@ class AlohaRobotConfig(ManipulatorRobotConfig):
     mock: bool = False
 
 
+# MODIFY PORTS =========================================================================
+# =========================================================================
+# =========================================================================
+# =========================================================================
+# =========================================================================
+# =========================================================================
+# =========================================================================
+# =========================================================================
+# =========================================================================
+# =========================================================================
+# =========================================================================
+# =========================================================================
+# =========================================================================
+# =========================================================================
+# =========================================================================
+# =========================================================================
 @RobotConfig.register_subclass("koch")
 @dataclass
 class KochRobotConfig(ManipulatorRobotConfig):
@@ -220,7 +236,7 @@ class KochRobotConfig(ManipulatorRobotConfig):
     leader_arms: dict[str, MotorsBusConfig] = field(
         default_factory=lambda: {
             "main": DynamixelMotorsBusConfig(
-                port="/dev/tty.usbmodem585A0085511",
+                port="COM6",
                 motors={
                     # name: (index, model)
                     "shoulder_pan": [1, "xl330-m077"],
@@ -237,7 +253,7 @@ class KochRobotConfig(ManipulatorRobotConfig):
     follower_arms: dict[str, MotorsBusConfig] = field(
         default_factory=lambda: {
             "main": DynamixelMotorsBusConfig(
-                port="/dev/tty.usbmodem585A0076891",
+                port="COM5",
                 motors={
                     # name: (index, model)
                     "shoulder_pan": [1, "xl430-w250"],
@@ -259,12 +275,12 @@ class KochRobotConfig(ManipulatorRobotConfig):
                 width=640,
                 height=480,
             ),
-            "phone": OpenCVCameraConfig(
-                camera_index=1,
-                fps=30,
-                width=640,
-                height=480,
-            ),
+            # "phone": OpenCVCameraConfig(
+            #     camera_index=1,
+            #     fps=30,
+            #     width=640,
+            #     height=480,
+            # ),
         }
     )
 

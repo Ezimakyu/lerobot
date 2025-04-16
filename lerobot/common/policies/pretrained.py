@@ -18,6 +18,7 @@ from pathlib import Path
 from typing import Type, TypeVar
 
 import packaging
+from packaging import version
 import safetensors
 from huggingface_hub import hf_hub_download
 from huggingface_hub.constants import SAFETENSORS_SINGLE_FILE
